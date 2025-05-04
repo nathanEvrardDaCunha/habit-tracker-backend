@@ -4,6 +4,7 @@ import express from "express";
 
 console.log("Hello Mum !");
 console.log(test);
+console.log("Hello Mum 2 !");
 
 // TODO: To .env and .env.example
 const PORT = 8000;
