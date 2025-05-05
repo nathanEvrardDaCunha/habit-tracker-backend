@@ -1,6 +1,7 @@
 import express from "express";
 import dotenv from "dotenv";
-import { json } from "stream/consumers";
+// POST-FIX: if there is a problem saying "Cannot find package X imported..." just add the "./" to make it a relative path
+import authRouter from "./routes/authRoutes.js";
 
 // === SETUP === //
 
@@ -21,9 +22,11 @@ const jsonTest = {
   skills: ["communication", "react"],
 };
 
-app.get("/api/", (req, res) => {
+app.get("/api", (req, res) => {
   res.status(200).json(jsonTest);
 });
+
+app.use("/api/auth", authRouter);
 
 // === SERVER === //
 
